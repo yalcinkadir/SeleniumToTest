@@ -7,7 +7,7 @@ import static java.lang.Thread.sleep;
 
 public class NavigateTo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException  {
 
         //configure path of chromedriver /Users/kadiryalcin/IdeaProjects/SeleniumToTest/chromedriver
         System.setProperty("webdriver.chrome.driver", "chromedriver");
@@ -16,11 +16,7 @@ public class NavigateTo {
 
         //url launch
         driver.get("https://www.ftx.com/");
-        try {
-            Thread.sleep(3000);
-        } catch (Exception e)  {
-            e.printStackTrace();
-        }
+        Thread.sleep(3000);
         System.out.println("Page title: "+ driver.getTitle());
         //browser quit
         driver.quit();
