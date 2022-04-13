@@ -1,4 +1,6 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -9,7 +11,6 @@ public class NavigateTo {
 
     public static void main(String[] args) throws InterruptedException  {
 
-
         //configure path of chromedriver /Users/kadiryalcin/IdeaProjects/SeleniumToTest/chromedriver
         System.setProperty("webdriver.chrome.driver", "chromedriver");
         //ChromeDriver instance
@@ -17,8 +18,11 @@ public class NavigateTo {
 
         //url launch
         driver.get("https://www.ftx.com/");
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         System.out.println("Page title: "+ driver.getTitle());
+        WebElement nameElement = driver.findElement(By.id("MuiButton-label"));
+        nameElement.click();
+
         //browser quit
         driver.quit();
 
