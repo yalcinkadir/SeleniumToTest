@@ -9,6 +9,7 @@ public class NavigateTo {
 
     public static void main(String[] args) throws InterruptedException  {
 
+
         //configure path of chromedriver /Users/kadiryalcin/IdeaProjects/SeleniumToTest/chromedriver
         System.setProperty("webdriver.chrome.driver", "chromedriver");
         //ChromeDriver instance
