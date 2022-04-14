@@ -3,15 +3,16 @@ package navigator;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class NavigateTo {
+public class NavigateToTest {
 
-    private static final Logger logger = LogManager.getLogger(NavigateTo.class);
+    private static final Logger logger = LogManager.getLogger(NavigateToTest.class);
 
-    public static void main(String[] args) throws InterruptedException  {
-
+    @Test
+    public void test() throws InterruptedException  {
 
         DOMConfigurator.configure("log4j.xml");
         //configure path of chromedriver /Users/kadiryalcin/IdeaProjects/SeleniumToTest/chromedriver
