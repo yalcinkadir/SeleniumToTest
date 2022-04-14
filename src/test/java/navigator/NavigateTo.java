@@ -1,27 +1,34 @@
-import org.openqa.selenium.By;
+package navigator;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.concurrent.TimeUnit;
-
-import static java.lang.Thread.sleep;
 
 public class NavigateTo {
 
+    private static final Logger logger = LogManager.getLogger(NavigateTo.class);
+
     public static void main(String[] args) throws InterruptedException  {
 
+
+        DOMConfigurator.configure("log4j.xml");
         //configure path of chromedriver /Users/kadiryalcin/IdeaProjects/SeleniumToTest/chromedriver
         System.setProperty("webdriver.chrome.driver", "chromedriver");
+        logger.info("get set of properties");
+        logger.debug("tehere is a debug");
         //ChromeDriver instance
         WebDriver driver = new ChromeDriver();
 
         //url launch
         driver.get("https://www.ftx.com/");
+        logger.error("get set of driver + sleeping");
         Thread.sleep(1000);
-        System.out.println("Page title: "+ driver.getTitle());
-        WebElement nameElement = driver.findElement(By.id("MuiButton-label"));
-        nameElement.click();
+        logger.info("Page title: "+ driver.getTitle());
+
+        //WebElement nameElement = driver.findElement(By.id("MuiButton-label"));
+        //nameElement.click();
 
         //browser quit
         driver.quit();
