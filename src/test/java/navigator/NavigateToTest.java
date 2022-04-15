@@ -1,11 +1,16 @@
 package navigator;
-
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class NavigateToTest {
 
@@ -25,14 +30,35 @@ public class NavigateToTest {
         //url launch
         driver.get("https://www.ftx.com/");
         logger.error("get set of driver + sleeping");
-        Thread.sleep(1000);
-        logger.info("Page title: "+ driver.getTitle());
+        //Thread.sleep(1000);
+        System.out.println("Page title: "+ driver.getTitle());
 
-        //WebElement nameElement = driver.findElement(By.id("MuiButton-label"));
-        //nameElement.click();
+        String title = driver.getTitle();
+
+        assertEquals("FTX Cryptocurrency Derivatives Exchange", title);
+
+        //WebElement cookieButton = driver.findElement(By.className("jss636"));
+        //cookieButton.click();
+
+        List<WebElement> buttons = driver.findElements(By.tagName("button"));
+        for (WebElement button : buttons) {
+            System.out.println(button.getText());
+            if (button.getText().equals("ACCEPT ALL COOKIES")) {
+                button.click();
+            }
+        }
 
         //browser quit
         driver.quit();
 
     }
+
+    @Test
+    public void test2() {
+
+        System.setProperty("webdriver.chrome.driver", "chromedriver");
+        System.out.println("das ist test 2");
+
+    }
+
 }
