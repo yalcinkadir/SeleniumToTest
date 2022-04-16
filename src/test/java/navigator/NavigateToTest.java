@@ -42,7 +42,7 @@ public class NavigateToTest {
 
         List<WebElement> buttons = driver.findElements(By.tagName("button"));
 
-        assertEquals("ACCEPT ALL COOKIES", buttons.get(23).getText());
+        assertEquals("ACCEPT ALL COOKIES", buttons.get(24).getText());
         assertEquals("REJECT ALL COOKIES", buttons.get(23).getText());
 
         for (WebElement button : buttons) {
