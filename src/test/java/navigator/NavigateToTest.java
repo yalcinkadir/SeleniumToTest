@@ -62,7 +62,7 @@ public class NavigateToTest {
 
         // https://www.toolsqa.com/java/junit-framework/junit-test-selenium-webdriver/
         System.setProperty("webdriver.chrome.driver", "chromedriver");
-        System.out.println("das ist test 2");
+        System.out.println("testing ftx search");
 
     }
 
