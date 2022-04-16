@@ -41,6 +41,10 @@ public class NavigateToTest {
         //cookieButton.click();
 
         List<WebElement> buttons = driver.findElements(By.tagName("button"));
+
+        assertEquals("ACCEPT ALL COOKIES", buttons.get(24).getText());
+        assertEquals("REJECT ALL COOKIES", buttons.get(23).getText());
+
         for (WebElement button : buttons) {
             System.out.println(button.getText());
             if (button.getText().equals("ACCEPT ALL COOKIES")) {
@@ -56,6 +60,7 @@ public class NavigateToTest {
     @Test
     public void test2() {
 
+        // https://www.toolsqa.com/java/junit-framework/junit-test-selenium-webdriver/
         System.setProperty("webdriver.chrome.driver", "chromedriver");
         System.out.println("das ist test 2");
 
