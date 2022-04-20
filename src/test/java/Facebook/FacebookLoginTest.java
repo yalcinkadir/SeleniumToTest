@@ -89,20 +89,19 @@ public class FacebookLoginTest {
         this.setFacebookUsername("mail@mail.com");
         this.setFacebookPassword("password");
         this.clickLogin();
-        Thread.sleep(20000);
+        Thread.sleep(1000);
 
         WebElement konto = chromeDriver.findElement(By.xpath("//div[@aria-label='Konto']"));
         System.out.println(konto);
         konto.click();
         org.junit.jupiter.api.Assertions.assertNotNull(konto);
 
-
-
     }
 
     @AfterAll
     public static void cleanUp(){
         System.out.println("After All cleanUp() method called");
+        chromeDriver.quit();
     }
 }
 
