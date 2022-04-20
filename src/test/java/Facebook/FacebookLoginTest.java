@@ -50,36 +50,30 @@ public class FacebookLoginTest {
     }
 
     @Test
-    public void wrongUserAndPassword() {
+    public void wrongUserAndPassword() throws InterruptedException {
 
-        try {
+        this.facebookClosePopup();
 
-            this.facebookClosePopup();
+        this.setFacebookUsername("mail@mail.com");
 
-            this.setFacebookUsername("mail@mail.com");
+        this.setFacebookPassword("Test1234");
 
-            this.setFacebookPassword("Test1234");
+        this.clickLogin();
 
-            this.clickLogin();
+        WebElement errorMessage = chromeDriver.findElement(By.className("_9ay7"));
+        System.out.println(errorMessage.getText());
+        boolean errorMessageTrue = errorMessage.getText().equals("Das von dir eingegebene Passwort ist falsch. Passwort vergessen?");
+        System.out.println("Error Text is: " + errorMessageTrue);
+        org.junit.jupiter.api.Assertions.assertTrue(errorMessageTrue);
 
-            WebElement errorMessage = chromeDriver.findElement(By.className("_9ay7"));
-            System.out.println(errorMessage.getText());
-            boolean errorMessageTrue = errorMessage.getText().equals("Das von dir eingegebene Passwort ist falsch. Passwort vergessen?");
-            System.out.println("Error Text is: " + errorMessageTrue);
-            org.junit.jupiter.api.Assertions.assertTrue(errorMessageTrue);
+        WebElement passwordForgetButton = chromeDriver.findElement(By.className("_97w4"));
+        System.out.println(passwordForgetButton.getText());
+        boolean passwordForgetTrue = passwordForgetButton.getText().equals("Passwort vergessen?");
+        System.out.println("Password Button: " + passwordForgetTrue);
+        org.junit.jupiter.api.Assertions.assertTrue(passwordForgetTrue);
 
-            WebElement passwordForgetButton = chromeDriver.findElement(By.className("_97w4"));
-            System.out.println(passwordForgetButton.getText());
-            boolean passwordForgetTrue = passwordForgetButton.getText().equals("Passwort vergessen?");
-            System.out.println("Password Button: " + passwordForgetTrue);
-            org.junit.jupiter.api.Assertions.assertTrue(passwordForgetTrue);
+        Thread.sleep(10000);
 
-            Thread.sleep(10000);
-            chromeDriver.quit();
-
-        } catch (Exception e) {
-            chromeDriver.quit();
-        }
     }
 
     @Test
@@ -99,7 +93,7 @@ public class FacebookLoginTest {
     }
 
     @AfterAll
-    public static void cleanUp(){
+    public static void cleanUp() {
         System.out.println("After All cleanUp() method called");
         chromeDriver.quit();
     }
