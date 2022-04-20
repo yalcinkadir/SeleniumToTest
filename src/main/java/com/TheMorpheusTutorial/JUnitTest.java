@@ -1,4 +1,4 @@
-package TheMorpheusTutorial;
+package com.TheMorpheusTutorial;
 
 import org.junit.jupiter.api.Test;
 

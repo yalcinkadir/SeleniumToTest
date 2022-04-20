@@ -1,4 +1,4 @@
-package TheMorpheusTutorial;
+package com.TheMorpheusTutorial;
 
 public class HelperClass {
     int i = 5;

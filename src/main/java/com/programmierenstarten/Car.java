@@ -1,4 +1,4 @@
-package programmierenstarten;
+package com.programmierenstarten;
 
 public class Car {
     //Attribute/Eigenschaften

@@ -1,4 +1,4 @@
-package TheMorpheusTutorial;
+package com.TheMorpheusTutorial;
 
 public class CustomThread  extends Thread{
     String name;
