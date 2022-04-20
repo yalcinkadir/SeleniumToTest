@@ -3,7 +3,7 @@ import navigator.NavigateToTest;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -41,7 +41,7 @@ public class FtxSearchMarketTest {
 
           List<WebElement> resultElements = chromeDriver.findElements(By.className("jss52"));
 
-          org.junit.Assert.assertTrue(resultElements.size() == 5);
+            org.junit.jupiter.api.Assertions.assertTrue(resultElements.size() == 5);
 
           for (WebElement forResult : resultElements) {
               String href = forResult.getAttribute("href");
@@ -56,7 +56,7 @@ public class FtxSearchMarketTest {
 
               System.out.println(href + " " + formatedValue);
 
-              org.junit.Assert.assertTrue(href.endsWith(formatedValue));
+              org.junit.jupiter.api.Assertions.assertTrue(href.endsWith(formatedValue));
 
           }
             chromeDriver.quit();
