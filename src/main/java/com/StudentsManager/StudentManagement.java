@@ -1,5 +1,6 @@
 package com.StudentsManager;
 
+import com.google.common.math.IntMath;
 import org.openqa.selenium.NotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,8 @@ public class StudentManagement {
                 break;
 
             default:
-                System.out.println("give a number");
+                System.out.println("your given option doesn't exist \nGive a number: ");
+                showProcess();
                 break;
         }
 
@@ -112,7 +114,8 @@ public class StudentManagement {
 
         Student findStudent = students.stream().filter(student -> student.getId() == id).findFirst().orElseThrow(NotFoundException::new);
 
-        findStudent.setDebts(findStudent.getDebts() - paymentDebts);
+        int result = IntMath.checkedSubtract(findStudent.getDebts(), paymentDebts);
+        findStudent.setDebts(result);
 
         System.out.println("new total debts " + findStudent.getDebts());
 
