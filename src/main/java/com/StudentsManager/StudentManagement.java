@@ -32,7 +32,8 @@ public class StudentManagement {
                 showProcess();
                 break;
             case 3:
-                //Todo
+                paymentInstallment();
+                showProcess();
                 break;
             case 4:
                 //ToDo
@@ -95,5 +96,20 @@ public class StudentManagement {
         Student findStudent = students.stream().filter(student -> student.getId() == id).findFirst().orElseThrow(NotFoundException::new);
         students.remove(findStudent);
 
+    }
+
+    public void paymentInstallment() {
+
+        Scanner scannerId = new Scanner(System.in);
+        System.out.print("ID of Student:    ");
+        int id = scannerId.nextInt();
+
+        Scanner scannerDebts = new Scanner(System.in);
+        System.out.println("payment installment: ");
+        int paymentDebts = Integer.parseInt(scannerDebts.nextLine());
+
+        Student findStudent = students.stream().filter(student -> student.getId() == id).findFirst().orElseThrow(NotFoundException::new);
+
+        findStudent.setDebts(findStudent.getDebts() - paymentDebts);
     }
 }
