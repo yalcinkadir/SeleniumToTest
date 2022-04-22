@@ -18,8 +18,8 @@ public class StudentManagement {
 
     public void showProcess() {
         Scanner chooseProcess = new Scanner(System.in);
-        System.out.println("Choose your process: \n1 add new student " +
-                "\n2 remove student \n3 payment of an installment \n4 ask debts\n5 list of students");
+        System.out.print("Choose your process: \n1 add new student " +
+                "\n2 remove student \n3 payment of an installment \n4 ask debts\n5 list of students\nGive a number: ");
         int processId = chooseProcess.nextInt();
 
         switch (processId) {
@@ -36,7 +36,8 @@ public class StudentManagement {
                 showProcess();
                 break;
             case 4:
-                //ToDo
+                askDebts();
+                showProcess();
                 break;
             case 5:
                 listStudent();
@@ -105,11 +106,37 @@ public class StudentManagement {
         int id = scannerId.nextInt();
 
         Scanner scannerDebts = new Scanner(System.in);
-        System.out.println("payment installment: ");
+        System.out.print("payment installment: ");
         int paymentDebts = Integer.parseInt(scannerDebts.nextLine());
 
         Student findStudent = students.stream().filter(student -> student.getId() == id).findFirst().orElseThrow(NotFoundException::new);
 
         findStudent.setDebts(findStudent.getDebts() - paymentDebts);
+
+        System.out.println("new total debts " + findStudent.getDebts());
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void askDebts(){
+
+        Scanner scannerId = new Scanner(System.in);
+        System.out.print("ID of Student:    ");
+        int id = scannerId.nextInt();
+
+        Student findStudent = students.stream().filter(student -> student.getId() == id).findFirst().orElseThrow(NotFoundException::new);
+
+        System.out.println("total debts: " + findStudent.getDebts());
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
