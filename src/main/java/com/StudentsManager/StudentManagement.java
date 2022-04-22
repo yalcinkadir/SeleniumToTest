@@ -19,7 +19,8 @@ public class StudentManagement {
     public void showProcess() {
         Scanner chooseProcess = new Scanner(System.in);
         System.out.print("Choose your process: \n1 add new student " +
-                "\n2 remove student \n3 payment of an installment \n4 ask debts\n5 list of students\nGive a number: ");
+                "\n2 remove student \n3 payment of an installment " +
+                "\n4 ask debts\n5 list of students\nGive a number:    ");
         int processId = chooseProcess.nextInt();
 
         switch (processId) {
