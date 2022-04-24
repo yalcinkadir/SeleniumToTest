@@ -26,7 +26,6 @@ public class Atm {
                     calculateRest(rest, money);
                 }
         );
-
     }
 
     public void calculateRest(AtomicInteger rest, int money) {
@@ -35,7 +34,6 @@ public class Atm {
             System.out.println(money + " ");
             rest.set(rest.get() - money);
         }
-
     }
 
     public static void main(String[] args) {
