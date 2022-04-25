@@ -23,13 +23,12 @@ public class Atm {
             }
         });
 
-        //  selectMoney(withdraw);
         withdrawMoney();
     }
 
     public static void main(String[] args) {
         Atm atm = new Atm();
         atm.withdrawMoney();
-    }
 
+    }
 }
