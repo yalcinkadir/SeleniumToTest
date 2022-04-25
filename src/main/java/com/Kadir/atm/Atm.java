@@ -1,4 +1,4 @@
-package com.Kadir;
+package com.Kadir.atm;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,30 +14,20 @@ public class Atm {
         System.out.println("Give your withdraw from your bank account: ");
         int withdraw = Integer.parseInt(scannerWithdraw.nextLine());
 
-        selectMoney(withdraw);
-        withdrawMoney();
-
-    }
-    public void selectMoney(int withdraw) {
-
         AtomicInteger rest = new AtomicInteger(withdraw);
         moneyList.forEach(money -> {
+            if (rest.get() >= money) {
+                int count = rest.get() / money;
+                System.out.println(money + " * " + count);
+                rest.set(rest.get() - money*count);
+            }
+        });
 
-                    calculateRest(rest, money);
-                }
-        );
-    }
-
-    public void calculateRest(AtomicInteger rest, int money) {
-
-        if (rest.get() >= money) {
-            System.out.println(money + " ");
-            rest.set(rest.get() - money);
-        }
+        //  selectMoney(withdraw);
+        withdrawMoney();
     }
 
     public static void main(String[] args) {
-
         Atm atm = new Atm();
         atm.withdrawMoney();
     }
