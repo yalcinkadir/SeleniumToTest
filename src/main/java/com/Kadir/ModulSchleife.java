@@ -4,7 +4,7 @@ public class ModulSchleife {
 
     public static void main(String[] args) {
 
-        for(int i = 1; i <= 100; i=i*2){
+        for(int i = 1; i <= 100; i++){
             String fooBar = calculateFooBar(i);
             String bar = calculateBar(i);
             String foo = calculateFoo(i);
