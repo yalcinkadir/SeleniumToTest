@@ -12,7 +12,6 @@ public class ImmoMain {
     static Immo immo5 = new ImmoWohnung(true, 5);
     static ArrayList<Immo> searchData = new ArrayList<Immo>();
 
-
     public static void main(String[] args) {
 
         searchData.add(immo1);
@@ -20,8 +19,6 @@ public class ImmoMain {
         searchData.add(immo3);
         searchData.add(immo4);
         searchData.add(immo5);
-
-
 
         ImmoMain immoMain = new ImmoMain();
         immoMain.showProcess();
@@ -64,7 +61,7 @@ public class ImmoMain {
 
     private void rooms(Immo immo) {
         Scanner chooseToRooms = new Scanner(System.in);
-        System.out.print("How many Rooms?      : \n 1 1+1" + "\n 2 2+1 ");
+        System.out.print("How many Rooms?      : ");
         int toRoomsId = chooseToRooms.nextInt();
 
         immo.setRoomNumber(toRoomsId);
