@@ -1,4 +1,4 @@
-package com.Kadir;
+package com.Kadir.Fibonacci;
 
 public class Fibonacci {
     public static void main(String[] args) {

@@ -2,8 +2,46 @@ package com.Kadir.Immobilien;
 
 public class Immo {
 
+    String type;
     boolean lexus;
     int roomNumber;
+
+    public Immo(String type) {
+        this.setType(type);
+    }
+
+    public Immo(boolean lexus, int roomNumber, String type) {
+
+        this.setType(type);
+        this.setLexus(lexus);
+        this.setRoomNumber(roomNumber);
+    }
+
+    public int calculatePrice() {
+        System.out.println("Your choices for " + this.type + " with " + getRoomNumber() + " Rooms. \nyou like Lexus: " + isLexus());
+        int priceOfObject = 0;
+
+        if (type.equals("Wohnung")) {
+            priceOfObject = 300 + getRoomNumber() * 10;
+            if (isLexus()) {
+                priceOfObject = priceOfObject + 100;
+            }
+        } else {
+            priceOfObject = 200 + getRoomNumber() * 10;
+            if (isLexus()) {
+                priceOfObject = priceOfObject + 50;
+            }
+        }
+        return priceOfObject;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public boolean isLexus() {
         return lexus;
@@ -20,5 +58,4 @@ public class Immo {
     public void setRoomNumber(int roomNumber) {
         this.roomNumber = roomNumber;
     }
-
 }

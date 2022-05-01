@@ -1,4 +1,4 @@
-package com.Kadir;
+package com.Kadir.Zweierpotenzen;
 
 public class Zweierpotenzen {
 

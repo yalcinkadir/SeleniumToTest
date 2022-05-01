@@ -7,17 +7,17 @@ public class Country {
     public static void main(String[] args) {
         ArrayList<String> countries = new ArrayList<String>(); // Create an ArrayList object
 
-        while(countries.size()<3){
+        while (countries.size() < 3) {
 
             Scanner scanner = new Scanner(System.in);
             System.out.println("Geben Sie ein Land ein: ");
-           String country = scanner.nextLine();
-           countries.add(country);
+            String country = scanner.nextLine();
+            countries.add(country);
 
         }
         System.out.println(countries);
 
-        for(String o : countries) {
+        for (String o : countries) {
             System.out.println(o);
 
             switch (o) {
@@ -36,7 +36,5 @@ public class Country {
 
             }
         }
-
-
     }
 }
