@@ -1,4 +1,4 @@
-package com.Kadir;
+package com.Kadir.RollingDice;
 
 import java.util.Date;
 import java.util.Random;

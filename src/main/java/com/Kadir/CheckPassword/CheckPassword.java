@@ -1,4 +1,4 @@
-package com.Kadir;
+package com.Kadir.CheckPassword;
 
 public class CheckPassword {
     public static boolean checkPasscode(int H4X0R) {

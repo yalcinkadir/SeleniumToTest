@@ -1,4 +1,4 @@
-package com.Kadir;
+package com.Kadir.BuySellCoin;
 
 public class BuySellCoin {
 

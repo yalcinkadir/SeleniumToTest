@@ -1,4 +1,4 @@
-package com.Kadir;
+package com.Kadir.Geometry;
 
 public class Geometry {
     public static void main(String[] args) {

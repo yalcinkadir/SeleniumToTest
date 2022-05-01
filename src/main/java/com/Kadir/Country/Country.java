@@ -1,4 +1,4 @@
-package com.Kadir;
+package com.Kadir.Country;
 
 import java.util.ArrayList;
 import java.util.Scanner;

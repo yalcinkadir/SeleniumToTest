@@ -1,4 +1,4 @@
-package com.Kadir;
+package com.Kadir.Schaltjahr;
 
 public class Schaltjahr {
 
