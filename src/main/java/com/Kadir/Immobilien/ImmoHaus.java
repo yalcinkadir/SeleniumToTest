@@ -12,12 +12,12 @@ public class ImmoHaus extends Immo {
 
     }
     public int calculatePrice() {
-        System.out.println("Your choices for house " + getRoomNumber() + " lexus? " + isLexus());
+        System.out.println("\nYour choices for House with " + getRoomNumber() + " Rooms. \nyou like Lexus: " + isLexus());
 
-        int calculatedPrice = 300 + getRoomNumber() * 20;
+        int priceOfObject = 300 + getRoomNumber() * 20;
         if(isLexus()){
-            calculatedPrice = calculatedPrice + 100;
+            priceOfObject = priceOfObject + 100;
         }
-        return calculatedPrice;
+        return priceOfObject;
     }
 }

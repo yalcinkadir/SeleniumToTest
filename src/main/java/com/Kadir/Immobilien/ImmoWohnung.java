@@ -8,18 +8,17 @@ public class ImmoWohnung extends Immo {
 
         this.setLexus(lexus);
         this.setRoomNumber(roomNumber);
-
     }
 
     public int calculatePrice() {
-        System.out.println("Your choices for flat " + getRoomNumber() + " lexus? " + isLexus());
+        System.out.println("Your choices for flat with " + getRoomNumber() + " Rooms. \nyou like Lexus: " + isLexus());
 
-        int calculatedPrice = 200 + getRoomNumber() * 10;
+        int priceOfObject = 200 + getRoomNumber() * 10;
         if(isLexus()){
-            calculatedPrice = calculatedPrice + 50;
+            priceOfObject = priceOfObject + 50;
         }
 
-        return calculatedPrice;
+        return priceOfObject;
 
     }
 }

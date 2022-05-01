@@ -21,14 +21,4 @@ public class Immo {
         this.roomNumber = roomNumber;
     }
 
-    public int calculatePrice() {
-        System.out.println("Your choices for house " + getRoomNumber() + " lexus? " + isLexus());
-
-        int calculatedPrice = 300 + getRoomNumber() * 20;
-        if(isLexus()){
-            calculatedPrice = calculatedPrice + 100;
-        }
-        return calculatedPrice;
-    }
-
 }

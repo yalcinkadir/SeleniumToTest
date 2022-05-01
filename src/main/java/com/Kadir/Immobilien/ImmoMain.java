@@ -22,13 +22,12 @@ public class ImmoMain {
 
         ImmoMain immoMain = new ImmoMain();
         immoMain.showProcess();
-
     }
 
     public void showProcess() {
 
         Scanner chooseToBuy = new Scanner(System.in);
-        System.out.print("1 Flat" + "\n2 House \nWhat are you looking for?      :");
+        System.out.print("1 Flat" + "\n2 House \nWhat are you looking for?:     ");
         int toBuyId = chooseToBuy.nextInt();
 
         switch (toBuyId) {
@@ -43,7 +42,7 @@ public class ImmoMain {
                 showProcess();
                 break;
             default:
-                System.out.println("your given option doesn't exist \nGive a number: ");
+                System.out.println("your given option doesn't exist \nGive a number:        ");
                 showProcess();
                 break;
         }
@@ -51,7 +50,7 @@ public class ImmoMain {
 
     public void lexus(Immo immo) {
         Scanner chooseLexus = new Scanner(System.in);
-        System.out.print("What are you looking for?      : \n 1 Lexus" + "\n 2 No Lexus ");
+        System.out.print("\nfor Lexus true" + "\nfor No Lexus false  \nDo you want a lexus one?:      ");
         boolean toBuyLexus = chooseLexus.nextBoolean();
 
         immo.setLexus(toBuyLexus);
@@ -61,20 +60,23 @@ public class ImmoMain {
 
     private void rooms(Immo immo) {
         Scanner chooseToRooms = new Scanner(System.in);
-        System.out.print("How many Rooms?      : ");
+        System.out.print("\nHow many Rooms?:                ");
         int toRoomsId = chooseToRooms.nextInt();
-
         immo.setRoomNumber(toRoomsId);
 
         search(immo);
-
+        searchData.size();
     }
-
     public void search(Immo immo){
         for(Immo data : searchData) {
-            if(data.isLexus() == immo.isLexus() && data.getRoomNumber() == immo.getRoomNumber()) {
-                System.out.println("your search is found. objects price is " + data.calculatePrice());
-
+            if(immo.getClass() == data.getClass() && data.isLexus() == immo.isLexus() && data.getRoomNumber() == immo.getRoomNumber()) {
+                int priceOfObject = 0;
+                if (data instanceof ImmoWohnung) {
+                    priceOfObject = ((ImmoWohnung)data).calculatePrice();
+                } else {
+                    priceOfObject = ((ImmoHaus)data).calculatePrice();
+                }
+                System.out.println("your search is found. objects price is " + priceOfObject + "\n");
             }
         }
     }
