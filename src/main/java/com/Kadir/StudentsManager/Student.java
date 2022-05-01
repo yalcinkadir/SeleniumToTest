@@ -1,4 +1,4 @@
-package com.StudentsManager;
+package com.Kadir.StudentsManager;
 
 public class Student {
 

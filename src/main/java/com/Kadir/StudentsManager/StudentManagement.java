@@ -1,4 +1,4 @@
-package com.StudentsManager;
+package com.Kadir.StudentsManager;
 
 import com.google.common.math.IntMath;
 import org.openqa.selenium.NotFoundException;

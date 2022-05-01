@@ -1,10 +1,27 @@
 package com.Kadir.Immobilien;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ImmoMain {
 
+    static Immo immo1 = new ImmoWohnung(false, 1);
+    static Immo immo2 = new ImmoWohnung(true, 2);
+    static Immo immo3 = new ImmoHaus(true, 5);
+    static Immo immo4 = new ImmoHaus(true, 6);
+    static Immo immo5 = new ImmoWohnung(true, 5);
+    static ArrayList<Immo> searchData = new ArrayList<Immo>();
+
+
     public static void main(String[] args) {
+
+        searchData.add(immo1);
+        searchData.add(immo2);
+        searchData.add(immo3);
+        searchData.add(immo4);
+        searchData.add(immo5);
+
+
 
         ImmoMain immoMain = new ImmoMain();
         immoMain.showProcess();
@@ -52,9 +69,17 @@ public class ImmoMain {
 
         immo.setRoomNumber(toRoomsId);
 
-        immo.calculatePrice();
+        search(immo);
 
+    }
 
+    public void search(Immo immo){
+        for(Immo data : searchData) {
+            if(data.isLexus() == immo.isLexus() && data.getRoomNumber() == immo.getRoomNumber()) {
+                System.out.println("your search is found. objects price is " + data.calculatePrice());
+
+            }
+        }
     }
 
 }
