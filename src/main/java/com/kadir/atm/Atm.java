@@ -10,20 +10,22 @@ public class Atm {
 
     public void withdrawMoney() {
 
+        int count = 0;
         Scanner scannerWithdraw = new Scanner(System.in);
-        System.out.println("Give your withdraw from your bank account: ");
-        int withdraw = Integer.parseInt(scannerWithdraw.nextLine());
+        while(count <3) {
+            ++count;
+            System.out.println("Give your withdraw from your bank account: ");
+            int withdraw = Integer.parseInt(scannerWithdraw.nextLine());
 
-        AtomicInteger rest = new AtomicInteger(withdraw);
-        moneyList.forEach(money -> {
-            if (rest.get() >= money) {
-                int count = rest.get() / money;
-                System.out.println(money + " * " + count);
-                rest.set(rest.get() - money*count);
-            }
-        });
-
-        withdrawMoney();
+            AtomicInteger rest = new AtomicInteger(withdraw);
+            moneyList.forEach(money -> {
+                if (rest.get() >= money) {
+                    int countMoney = rest.get() / money;
+                    System.out.println(money + " * " + countMoney);
+                    rest.set(rest.get() - money * countMoney);
+                }
+            });
+        }
     }
 
     public static void main(String[] args) {
