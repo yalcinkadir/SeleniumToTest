@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
+import static java.lang.Integer.parseInt;
 import static java.lang.System.out;
 
 public class IntNumbers {
@@ -13,10 +14,16 @@ public class IntNumbers {
     public static void scanner(int generateNumber) {
         Scanner scanner = new Scanner(System.in);
         out.print("Give me a number: ");
-        int scannerNumber = scanner.nextInt();
+        int scannerNumber = Integer.parseInt(scanner.nextLine());
 
+        if(scannerNumber > 10)
+        {
+            out.println("Give a number between 1-10, bro make it :)");
+            scanner(generateNumber);
+        }
         if (scannerNumber == generateNumber) {
             out.println("******\nyou win\n******");
+            scanner.close(); //Quit from scanner
         } else {
             out.println("try again");
             scanner(generateNumber);
