@@ -7,9 +7,8 @@ import java.util.Arrays;
 public class CreateFile {
     public static void main(String[] args) throws IOException {
 
-        File file = new File("TestFile3.txt");
+        File file = new File("TestFile.txt");
         boolean createdFile = file.createNewFile();
-
         System.out.println(createdFile);
 
         if(createdFile){
