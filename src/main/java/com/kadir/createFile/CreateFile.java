@@ -8,8 +8,16 @@ public class CreateFile {
 
     public static void main(String[] args) throws IOException {
 
-        File file = new File("TestFile.txt");
-        file.createNewFile();
+        File file = new File("TestFile3.txt");
+        boolean createdFile = file.createNewFile();
+
+        System.out.println(createdFile);
+
+        if(createdFile){
+            System.out.println("file created! ");
+        } else {
+            System.out.println("file already exists ");
+        }
 
         if(file.exists()){
             System.out.println(file.getName() + " exists!");
