@@ -4,6 +4,7 @@ import static java.lang.System.out;
 
 public class Employee {
 
+
     private String name;
     private String jobTitle;
     private double amountPaid;
