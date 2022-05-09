@@ -9,7 +9,7 @@ public class Account {
     private String address;
     private double balance;
 
-    Account(String name, String address){ //new construction
+    public Account(String name, String address){ //new construction
         this.name = name;
         this.address  = address;
     }
@@ -47,6 +47,7 @@ public class Account {
         out.print(address);
         out.print(") has $");
         out.print(balance);
+        out.println();
     }
 
     public double getInterest(double percentageRate) {

@@ -46,6 +46,8 @@ public class ImmoMain {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\nfor Lexus true" + "\nfor No Lexus false  \nDo you want a lexus one?:      ");
         boolean scannerLexus = scanner.nextBoolean();
+        String resText = scannerLexus ? " lexus search ok " : " lexus search not ok";
+        System.out.println(resText);
         immo.setLexus(scannerLexus);
 
         rooms(immo);
