@@ -1,4 +1,3 @@
-
 package com.kadir.human;
 
 public class HumanAdult extends Human {
@@ -9,6 +8,7 @@ public class HumanAdult extends Human {
 
     /**
      * measure for Mama 30ml per Measure
+     *
      * @param measure count of measure
      */
     public int prepairMama(int measure) {

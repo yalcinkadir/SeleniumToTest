@@ -7,7 +7,7 @@ public enum Sex {
     int value;
 
     Sex(int sexType) {
-        this.value=sexType;
+        this.value = sexType;
     }
 
     public int getValue() {

@@ -13,7 +13,7 @@ public class Person2 {
                 "1 man\n2 woman\n");
         String sexScanner = scanner.next();
 
-        switch(sexScanner) {
+        switch (sexScanner) {
             case "1":
                 System.out.println("Thank you Mr.");
                 break;
@@ -21,7 +21,7 @@ public class Person2 {
                 Scanner scanner1 = new Scanner(in);
                 System.out.println("How old are you?");
                 int age = Integer.parseInt(scanner1.next());
-                if(age<=18){
+                if (age <= 18) {
                     System.out.println("Nice to meet you Ms.");
                 } else {
                     System.out.println("Nice to meet you Mrs.");

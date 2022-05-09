@@ -6,6 +6,7 @@ import static java.lang.System.out;
 public class TemperatureNice extends Temperature {
 
     private boolean sunnyDay;
+
     public TemperatureNice() {
         super();
     }
@@ -13,7 +14,7 @@ public class TemperatureNice extends Temperature {
     public TemperatureNice(double number) {
         super(number);
 
-        if(getNumber() > 15) {
+        if (getNumber() > 15) {
             setSunnyDay(true);
         }
         out.println("created super(number)");

@@ -13,13 +13,12 @@ public class CheckPassword {
 
     public static void main(String[] args) {
 
-        for(int i=0; i<=1000; i++){
-        boolean myPass = checkPasscode(i);
+        for (int i = 0; i <= 1000; i++) {
+            boolean myPass = checkPasscode(i);
 
-            if(myPass){
+            if (myPass) {
                 System.out.println("Your password is: " + i);
             }
         }
-
     }
 }

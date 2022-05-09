@@ -2,10 +2,6 @@ package com.kadir.collections;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.stream.Stream;
-
-import static java.lang.System.out;
 
 public class TallySales {
 
@@ -20,7 +16,7 @@ public class TallySales {
             }
         }
 
-        sales.stream().filter((n-> n.getItem().equals("DVD"))).forEach((n) -> System.out.println(n.getItem() + " " + n.getPrice()));
+        sales.stream().filter((n -> n.getItem().equals("DVD"))).forEach((n) -> System.out.println(n.getItem() + " " + n.getPrice()));
         System.out.println();
 
         double res = sales.stream().filter((n -> n.getItem().equals("DVD"))).map(n -> n.getPrice()).reduce(0.0, (price1, price2) -> price1 + price2);

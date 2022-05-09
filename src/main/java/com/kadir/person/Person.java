@@ -7,7 +7,6 @@ import static java.lang.System.in;
 public class Person {
 
 
-
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(in);
@@ -17,14 +16,14 @@ public class Person {
 
         String greetingName = "";
 
-        if(sexScanner == Sex.Mr.getValue()){
+        if (sexScanner == Sex.Mr.getValue()) {
             greetingName = "Mr.";
-        } else if(sexScanner == Sex.Ms.getValue()){
+        } else if (sexScanner == Sex.Ms.getValue()) {
             Scanner scanner1 = new Scanner(in);
             System.out.println("How old are you? ");
             int age = Integer.parseInt(scanner1.next());
 
-            if(age <= 18) {
+            if (age <= 18) {
                 greetingName = "Ms.";
             } else {
                 greetingName = "Mrs.";
@@ -32,8 +31,6 @@ public class Person {
         }
 
         System.out.println("Hi! " + greetingName + "\nI am very excited to meet to you.");
-
-
 
 
     }

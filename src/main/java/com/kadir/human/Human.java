@@ -2,7 +2,7 @@ package com.kadir.human;
 
 public class Human {
 
-    int footCount= 2;
+    int footCount = 2;
     int handCount = 2;
 
     public void food(String foodName) {

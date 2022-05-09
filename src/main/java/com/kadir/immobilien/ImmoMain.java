@@ -62,9 +62,9 @@ public class ImmoMain {
         search(immo);
     }
 
-    public void search(Immo immo){
-        for(Immo data : searchData) {
-            if(immo.getType().equals(data.getType()) && data.isLexus() == immo.isLexus() && data.getRoomNumber() == immo.getRoomNumber()) {
+    public void search(Immo immo) {
+        for (Immo data : searchData) {
+            if (immo.getType().equals(data.getType()) && data.isLexus() == immo.isLexus() && data.getRoomNumber() == immo.getRoomNumber()) {
                 int priceOfObject = data.calculatePrice();
 
                 System.out.println("your search is found. objects price is " + priceOfObject + "\n");

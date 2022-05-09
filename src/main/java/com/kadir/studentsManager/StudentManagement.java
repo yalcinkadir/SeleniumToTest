@@ -2,6 +2,7 @@ package com.kadir.studentsManager;
 
 import com.google.common.math.IntMath;
 import org.openqa.selenium.NotFoundException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -126,7 +127,7 @@ public class StudentManagement {
         }
     }
 
-    public void askDebts(){
+    public void askDebts() {
 
         Scanner scannerId = new Scanner(System.in);
         System.out.print("ID of Student:    ");

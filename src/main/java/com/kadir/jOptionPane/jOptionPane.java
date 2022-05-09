@@ -1,4 +1,4 @@
-package com.kadir.JOptionPane;
+package com.kadir.jOptionPane;
 
 import javax.swing.*;
 
@@ -7,7 +7,7 @@ public class jOptionPane {
         JOptionPane.showMessageDialog(null, "Welcome on Board!");
         String username = JOptionPane.showInputDialog("Username:");
         String password = JOptionPane.showInputDialog("Password:");
-        
+
         if (username != null && password != null && (
                 (username.equals("bburd") && password.equals("swordfish")) ||
                         (username.equals("hritter") && password.equals("preakston")))

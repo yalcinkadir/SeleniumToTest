@@ -5,9 +5,9 @@ public class Student {
     private String name;
     private String branch;
     private int debts;
-    private int  id;
+    private int id;
 
-   public Student(String name, String branch, int debts, int id){
+    public Student(String name, String branch, int debts, int id) {
         this.name = name;
         this.branch = branch;
         this.debts = debts;

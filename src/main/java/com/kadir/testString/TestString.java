@@ -20,7 +20,7 @@ public class TestString {
         if (!pass) {
             out.println("your given password is false");
         }
-        if (pass){
+        if (pass) {
             out.println("Bravo! correct password");
         }
         out.println();

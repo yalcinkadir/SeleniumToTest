@@ -9,14 +9,36 @@ public class Account {
     private String address;
     private double balance;
 
-    public Account(String name, String address){ //new construction
+    public void display() {
+        out.print(name);
+        out.print(" (");
+        out.print(address);
+        out.print(") has $");
+        out.print(balance);
+    }
+
+    public double getInterest(double percentageRate) {
+        return balance * percentageRate / 100.00;
+    }
+
+    //new construction with 3 parameters
+    public Account(String name, String address, double balance) {
         this.name = name;
-        this.address  = address;
+        this.address = address;
+        this.balance = balance;
     }
 
-    Account(){ //new construction
+    //new construction with 2 parameters
+    public Account(String name, String address) {
+        this.name = name;
+        this.address = address;
     }
 
+    //new construction default parameter
+    Account() {
+    }
+
+    //getters and setters
     public String getName() {
         return name;
     }
@@ -39,18 +61,5 @@ public class Account {
 
     public void setBalance(double balance) {
         this.balance = balance;
-    }
-
-    public void display() {
-        out.print(name);
-        out.print(" (");
-        out.print(address);
-        out.print(") has $");
-        out.print(balance);
-        out.println();
-    }
-
-    public double getInterest(double percentageRate) {
-        return balance * percentageRate / 100.00;
     }
 }

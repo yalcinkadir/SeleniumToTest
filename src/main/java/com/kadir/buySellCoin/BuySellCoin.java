@@ -1,31 +1,19 @@
 package com.kadir.buySellCoin;
 
 public class BuySellCoin {
-
     private final String name;
     private double totalSize;
 
     public static void main(String[] args) {
 
-        // ingilizce create instance
-        // türkce obje olustur
-        // initialisieren
         BuySellCoin bscoin = new BuySellCoin("BTC");
-        String buyResult = bscoin.buy(0);
+        String buyResult = bscoin.buy(10);
         System.out.println("Buying " + buyResult);
         String sellResult = bscoin.sell(3);
         System.out.println("Selling " + sellResult);
         System.out.println(bscoin.getTotalSize());
     }
 
-
-    public BuySellCoin(String name) {
-
-        this.name = name;
-    }
-
-    // function / method
-    // parameter
     /**
      * @param size
      */
@@ -45,6 +33,11 @@ public class BuySellCoin {
             totalSize = totalSize - size;
             return "succes";
         }
+    }
+
+    public BuySellCoin(String name) {
+
+        this.name = name;
     }
 
     public double getTotalSize() {

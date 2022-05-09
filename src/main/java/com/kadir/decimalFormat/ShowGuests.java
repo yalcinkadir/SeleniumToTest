@@ -12,21 +12,21 @@ public class ShowGuests {
         accountArray[0] = new Account("Gülsün", "Wien");
         accountArray[1] = new Account("Kadir", "Wien");
 
-        for(Account account : accountArray){
+        for (Account account : accountArray) {
             account.display();
         }
         out.println();
 
         String[] guestName = {"Kadir", "Gülsün", "Yusuf Kerem"};
         out.println("Name of Guests");
-        for(int i=0; i<3; i++) {
+        for (int i = 0; i < 3; i++) {
             out.println(i + "\t" + guestName[i]);
 
         }
         out.println();
 
         int i = 0;
-        for (String names : guestName ) {
+        for (String names : guestName) {
             out.println(i + "\t" + names);
             i++;
 

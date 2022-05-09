@@ -6,7 +6,7 @@ public class Zweierpotenzenv2 {
 
         int count = 0;
 
-        for(int i=1; i<1050000; i=i*2){
+        for (int i = 1; i < 1050000; i = i * 2) {
             count = count + 1;
             System.out.println(count + " " + i);
         }

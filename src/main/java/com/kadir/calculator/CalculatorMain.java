@@ -3,28 +3,18 @@ package com.kadir.calculator;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import static java.lang.System.in;
+
 public class CalculatorMain {
     public static void main(String[] args) {
 
-        Scanner scannerOperator = new Scanner(System.in);
+        Scanner scannerOperator = new Scanner(in);
         System.out.println("+ - * /");
-        String operation = scannerOperator.nextLine();
+        String operation = scannerOperator.next();
 
         Integer x = getFirstZahl();
+        Integer y = getSecondZahl();
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Geben Sie die zweite Zahl ein: ");
-        Integer y = scanner.nextInt();
-
-     /*   if (operation.equalsIgnoreCase("+")) {
-
-            Calculator calculator = new Calculator();
-            Integer sum = calculator.addOperator(x, y);
-            System.out.println(x + " + " + y + " = " + sum);
-        } else {
-            System.out.println("Geben Sie nur + - * / ein!");
-        }
-*/
         switch (operation) {
             case "+":
                 //Calculator calculator = new Calculator();
@@ -38,11 +28,10 @@ public class CalculatorMain {
                 System.out.println("Falsche Eingabe");
 
         }
-
     }
 
     static Integer getFirstZahl() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(in);
         System.out.println("Geben Sie die erste Zahl ein: ");
         try {
             return scanner.nextInt();
@@ -53,5 +42,9 @@ public class CalculatorMain {
         return 0;
     }
 
-
+    static Integer getSecondZahl() {
+        Scanner scanner = new Scanner(in);
+        System.out.println("Geben Sie die zweite Zahl ein: ");
+        return scanner.nextInt();
+    }
 }

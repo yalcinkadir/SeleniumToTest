@@ -11,18 +11,18 @@ public class CreateFile {
         boolean createdFile = file.createNewFile();
         System.out.println(createdFile);
 
-        if(createdFile){
+        if (createdFile) {
             System.out.println("file created! ");
         } else {
             System.out.println("file already exists ");
         }
 
-        if(file.exists()){
+        if (file.exists()) {
             System.out.println(file.getName() + " exists!");
         }
 
         File directoryFileList = new File("/Users/kadiryalcin/");
-        if(directoryFileList.isDirectory()) {
+        if (directoryFileList.isDirectory()) {
             File[] listFilename = directoryFileList.listFiles();
             System.out.println(listFilename);
 
@@ -37,7 +37,7 @@ public class CreateFile {
             for (int i = 0; i < listFilename.length; i++) {
                 System.out.println(listFilename[i].getName());
 
-                if(listFilename[i].getName().equals("Desktop")){
+                if (listFilename[i].getName().equals("Desktop")) {
                     forFoundsFile = listFilename[i];
                     System.out.println("\ni get your file " + listFilename[i].getName());
                     break;

@@ -1,7 +1,5 @@
 package com.kadir.temperature;
 
-import org.springframework.http.converter.json.GsonBuilderUtils;
-
 import java.time.LocalTime;
 
 import static java.lang.System.out;
@@ -28,7 +26,7 @@ public class UseTemperature {
 
         out.printf(format, temp.getNumber(), temp.getScale(), "child");
 
-        out.println(temp.getNumber() + " degrees " + temp.getScale() + " calculated for child" );
+        out.println(temp.getNumber() + " degrees " + temp.getScale() + " calculated for child");
 
         temp = new Temperature(32.0);
 
@@ -58,18 +56,18 @@ public class UseTemperature {
                 break;
             default:
                 letter = 'X';
-                break; }
+                break;
+        }
         out.println(letter);
     }
 
 
-    public void message(){
+    public void message() {
 
         final String message = "dear Student %s lesson %s will begin very soon\n";
         out.printf(message, "Yusuf Kerem", "emekleme\n");
 
     }
-
 
 
 }

@@ -1,12 +1,10 @@
 package com.kadir.alarm;
 
-import java.time.Clock;
-import java.time.Instant;
 import java.time.LocalTime;
 
 public class Alarm {
 
-    static LocalTime setTime = LocalTime.of(13, 15, 0, 0);
+    static LocalTime setTime = LocalTime.of(12, 26, 0, 0);
 
     public static void main(String[] args) {
 
@@ -20,5 +18,4 @@ public class Alarm {
             }
         }
     }
-
 }
