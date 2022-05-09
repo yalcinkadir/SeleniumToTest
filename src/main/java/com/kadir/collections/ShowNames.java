@@ -11,7 +11,7 @@ import static java.lang.System.out;
 
 public class ShowNames {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
 
         HashMap<Integer, String> mappedObject = new HashMap<>();
         mappedObject.put(41, "Kirsehir"); // key value
@@ -19,7 +19,17 @@ public class ShowNames {
         mappedObject.put(6, "Ankara");
 
         ArrayList<String> people = new ArrayList<>();
-        Scanner diskScanner = new Scanner(new File("names.txt"));
+        Scanner diskScanner = null;
+        try {
+            diskScanner = new Scanner(new File("names.txt"));
+        } catch (Exception e) {
+            out.println("File not found!");
+            throw new MyFileNotFoundException();
+        } finally {
+            out.println("Always called");
+        }
+
+
         while (diskScanner.hasNext()) {
             people.add(diskScanner.nextLine());
         }
