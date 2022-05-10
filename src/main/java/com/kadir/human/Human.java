@@ -1,6 +1,6 @@
 package com.kadir.human;
 
-public class Human {
+public abstract class Human {
 
     int footCount = 2;
     int handCount = 2;
@@ -9,4 +9,7 @@ public class Human {
 
         System.out.println("Im busy now, Im eating " + foodName);
     }
+
+    public abstract void shower();
+
 }

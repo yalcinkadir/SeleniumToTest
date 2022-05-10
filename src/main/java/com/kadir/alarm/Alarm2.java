@@ -9,6 +9,7 @@ public class Alarm2 {
     public static void main(String[] args) throws InterruptedException {
         time();
     }
+
     public static void time() throws InterruptedException {
         Thread.sleep(1000);
         if (setTime.getMinute() == LocalTime.now().getMinute()) {

@@ -10,10 +10,11 @@ public class Table implements Displayable, Summarizable {
 
     Scanner diskFile;
     ArrayList<String> lines = new ArrayList<>();
+
     public Table(String fileName) {
 
         File file = new File(fileName);
-        if(!file.exists()){
+        if (!file.exists()) {
             try {
                 file.createNewFile();
             } catch (IOException e) {
@@ -29,15 +30,17 @@ public class Table implements Displayable, Summarizable {
             lines.add(diskFile.nextLine());
         }
     }
+
     @Override
     public void display() {
         for (String line : lines) {
             System.out.println(line);
         }
     }
+
     @Override
     public String summarize() {
-        if(lines.isEmpty()) {
+        if (lines.isEmpty()) {
             return null;
         }
         return lines.get(0);

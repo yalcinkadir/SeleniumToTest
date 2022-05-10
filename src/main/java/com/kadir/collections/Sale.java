@@ -3,6 +3,7 @@ package com.kadir.collections;
 public class Sale {
     private String item;
     private double price;
+
     public Sale(String item, double price) {
         this.item = item;
         this.price = price;

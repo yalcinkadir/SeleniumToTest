@@ -2,7 +2,8 @@ package com.kadir.testInterfaces;
 
 public class ColumnOfNumbers implements Summarizable, Displayable {
 
-    double numbers[];
+    double[] numbers;
+
     public ColumnOfNumbers(double[] numbers) {
         this.numbers = numbers;
     }
@@ -13,8 +14,10 @@ public class ColumnOfNumbers implements Summarizable, Displayable {
             System.out.println(d);
         }
     }
+
     @Override
-    public String summarize() { double total = 0.0;
+    public String summarize() {
+        double total = 0.0;
         for (double d : numbers) {
             total += d;
         }

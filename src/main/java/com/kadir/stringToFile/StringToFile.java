@@ -29,14 +29,12 @@ public class StringToFile {
 
         } catch (IOException ioe) {
             ioe.printStackTrace();
-        }
-        finally
-        {
-            try{
-                if(bw!=null)
+        } finally {
+            try {
+                if (bw != null)
                     bw.close();
-            }catch(Exception ex){
-                System.out.println("Error in closing the BufferedWriter"+ex);
+            } catch (Exception ex) {
+                System.out.println("Error in closing the BufferedWriter" + ex);
             }
         }
     }

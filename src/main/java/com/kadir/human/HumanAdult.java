@@ -16,4 +16,9 @@ public class HumanAdult extends Human {
         System.out.println("My Mom is preparing Mama with " + sumMama + " ml");
         return sumMama;
     }
+
+    @Override
+    public void shower() {
+        System.out.println("Can a lone get shower");
+    }
 }
