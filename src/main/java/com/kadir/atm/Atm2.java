@@ -7,17 +7,29 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static java.lang.System.in;
 
-public class Atm {
+public class Atm2 {
     ArrayList<Integer> moneyList = new ArrayList<>(Arrays.asList(500, 200, 100, 50, 20, 10));
 
     public void withdrawMoney() {
 
-        int count = 0;
         Scanner scannerWithdraw = new Scanner(in);
-        while (count < 3) {
-            ++count;
             System.out.println("Give your withdraw from your bank account: ");
-            int withdraw = Integer.parseInt(scannerWithdraw.next());
+            String withdrawString = scannerWithdraw.next();
+            if(withdrawString.equals("exit")){
+                System.out.println("See you soon!");
+                return;
+            }
+
+            int withdraw = 0;
+            try {
+                withdraw = Integer.parseInt(withdrawString);
+                if(withdraw == 999){
+                    return;
+                }
+            } catch(NumberFormatException numberFormatException){
+                System.out.println("This is a failure message. Program exit! ");
+                return;
+        }
 
             AtomicInteger rest = new AtomicInteger(withdraw);
             moneyList.forEach(money -> {                                    //money a name for "foreach" loop
@@ -27,11 +39,11 @@ public class Atm {
                     rest.set(rest.get() - money * countMoney); //old: rest.set(rest.get() - money * countMoney);
                 }
             });
-        }
+        withdrawMoney();
     }
 
     public static void main(String[] args) {
-        Atm atm = new Atm();
+        Atm2 atm = new Atm2();
         atm.withdrawMoney();
     }
 }
