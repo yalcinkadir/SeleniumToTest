@@ -15,7 +15,6 @@ class MysqlCon {
             //insertData(stmt);
 
 
-
             con.close();
         } catch (Exception e) {
             System.out.println(e);
@@ -51,7 +50,7 @@ class MysqlCon {
 
     }
 
-    public static void insertData(Statement statement){
+    public static void insertData(Statement statement) {
 
         try {
             statement.executeUpdate("INSERT INTO ACCOUNTS (Name, Address, Balance)     \n" +
