@@ -27,8 +27,6 @@ public class StudentsController extends StudentManagement {
             Statement stmt = con.createStatement();
             stmt.executeUpdate("INSERT INTO Students (id, name, branch, debts)     \n" +
                     "VALUES (" + student.getId() + ", '" + student.getName() + "',  '" + student.getBranch() + "', " + student.getDebts() + ")");
-
-
             con.close();
         } catch (Exception e) {
             System.out.println(e);
@@ -62,7 +60,6 @@ public class StudentsController extends StudentManagement {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
         return students;
     }
 
