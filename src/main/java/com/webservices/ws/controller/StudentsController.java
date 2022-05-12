@@ -4,10 +4,7 @@ import com.webservices.ws.controller.StudentsManager.Student;
 import com.webservices.ws.controller.StudentsManager.StudentManagement;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,8 +67,30 @@ public class StudentsController extends StudentManagement {
     }
 
     @GetMapping("/getStudent/{id}")
-    Student findStudent(@PathVariable int id) {
-        return findStudentById(id);
+    Student findStudent(@PathVariable int id) { return filterStudent(id);}
+
+    public Student filterStudent(int id) {
+        Student student = new Student();
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/classicmodels", "root", "root1234");
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Students where id = " + id);
+
+            student.setId(rs.getInt("id"));
+            student.setName(rs.getString("name"));
+            student.setBranch(rs.getString("branch"));
+            student.setDebts(rs.getInt("debts"));
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+
+        return student;
     }
+
 
 }
