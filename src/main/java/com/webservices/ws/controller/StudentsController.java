@@ -78,12 +78,12 @@ public class StudentsController extends StudentManagement {
                     "jdbc:mysql://localhost:3306/classicmodels", "root", "root1234");
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM Students where id = " + id);
-
-            student.setId(rs.getInt("id"));
-            student.setName(rs.getString("name"));
-            student.setBranch(rs.getString("branch"));
-            student.setDebts(rs.getInt("debts"));
-
+            if(rs.next()) {
+                student.setId(rs.getInt("id"));
+                student.setName(rs.getString("name"));
+                student.setBranch(rs.getString("branch"));
+                student.setDebts(rs.getInt("debts"));
+            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
