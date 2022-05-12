@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -39,29 +40,33 @@ public class StudentsController extends StudentManagement {
 
     @GetMapping("/showStudent")
     List<Student> all() {
-        return getStudents();
+        return listStudent();
     }
-    public static void listCustomer(Student student) {
+    public static List<Student> listStudent() {
+
+        ArrayList<Student> students = new ArrayList<>();
 
         ResultSet rs = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/classicmodels", "root", "root1234");
-//here sonoo is database name, root is username and password
             Statement stmt = con.createStatement();
-            rs = stmt.executeQuery("SELECT * FROM customers as c\n" +
-                    "INNER JOIN orders as o\n" +
-                    "ON c.customerNumber = o.customerNumber where c.customerNumber = 103");
+            rs = stmt.executeQuery("SELECT * FROM Students as c\n");
 
-            while (true) {
-                if (!rs.next()) break;
-                System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3) + " " + rs.getString("phone"));
+            while (rs.next()) {
+                Student student = new Student();
+                student.setId(rs.getInt("id"));
+                student.setName(rs.getString("name"));
+                student.setBranch(rs.getString("branch"));
+                student.setDebts(rs.getInt("debts"));
+                students.add(student);
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
+        return students;
     }
 
     @GetMapping("/getStudent/{id}")
