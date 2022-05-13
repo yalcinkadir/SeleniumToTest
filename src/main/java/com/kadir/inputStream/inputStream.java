@@ -20,7 +20,7 @@ public class inputStream {
 
         //ToDo
         //close writing if ...
-        if(!(bw == null)) {
+        if (!(bw == null)) {
             bw.close();
         }
     }

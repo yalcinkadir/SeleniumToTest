@@ -17,6 +17,7 @@ public class StudentsController extends StudentManagement {
         insertData(newStudent);
         return "added new student";
     }
+
     public static void insertData(Student student) {
         System.out.println("Data added in Database");
         try {
@@ -37,6 +38,7 @@ public class StudentsController extends StudentManagement {
     List<Student> all() {
         return listStudent();
     }
+
     public static List<Student> listStudent() {
 
         ArrayList<Student> students = new ArrayList<>();
@@ -64,7 +66,9 @@ public class StudentsController extends StudentManagement {
     }
 
     @GetMapping("/getStudent/{id}")
-    Student findStudent(@PathVariable int id) { return filterStudent(id);}
+    Student findStudent(@PathVariable int id) {
+        return filterStudent(id);
+    }
 
     public Student filterStudent(int id) {
         Student student = new Student();
@@ -75,7 +79,7 @@ public class StudentsController extends StudentManagement {
                     "jdbc:mysql://localhost:3306/classicmodels", "root", "root1234");
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM Students where id = " + id);
-            if(rs.next()) {
+            if (rs.next()) {
                 student.setId(rs.getInt("id"));
                 student.setName(rs.getString("name"));
                 student.setBranch(rs.getString("branch"));
@@ -84,10 +88,6 @@ public class StudentsController extends StudentManagement {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-
         return student;
     }
-
-
 }
